@@ -1,0 +1,8 @@
+P(t*) / 10^26 in (-3,-2)
+P'(t*) / 10^45 in (1,2)
+Q(t*) / 10^26 in (1,2)
+Q'(t*) / 10^45 in (4,5)
+Half-axis root order: QPQPPQQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQPQ
+Exactly the stated exchanged tags: [(5, 'Q', 'P'), (6, 'P', 'Q')]
+Complete counts for P and Q: 127 and 128 distinct negative roots
+PASS

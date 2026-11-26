@@ -1,0 +1,30 @@
+import LongCycleBounds.TwoCycle130SeparateRoots
+
+#check LongCycleBounds.TwoCycle130.original_not_interlacing
+#check LongCycleBounds.TwoCycle130.at_most_two
+#check LongCycleBounds.TwoCycle130.lower_row
+#check LongCycleBounds.TwoCycle130.upper_row
+#check LongCycleBounds.TwoCycle130Arithmetic.evaluated_signs
+
+#print axioms LongCycleBounds.TwoCycle130.original_not_interlacing
+#print axioms LongCycleBounds.TwoCycle130.at_most_two
+#print axioms LongCycleBounds.TwoCycle130.unit
+#print axioms LongCycleBounds.TwoCycle130.unit_tail
+#print axioms LongCycleBounds.TwoCycle130.lower_row
+#print axioms LongCycleBounds.TwoCycle130.upper_row
+#print axioms LongCycleBounds.TwoCycle130Arithmetic.lowerCoeffs_spec
+#print axioms LongCycleBounds.TwoCycle130Arithmetic.upperCoeffs_spec
+#print axioms LongCycleBounds.TwoCycle130Arithmetic.evaluated_signs
+#print axioms LongCycleBounds.TwoCycle130.nonzero_weight_at_most_two
+#print axioms LongCycleBounds.RootTests.common_zero_obstruction
+#check LongCycleBounds.TwoCycle130.individually_real_but_not_interlacing
+#check LongCycleBounds.TwoCycle130.lower_simple
+#check LongCycleBounds.TwoCycle130.upper_simple
+
+#print axioms LongCycleBounds.TwoCycle130.individually_real_but_not_interlacing
+#print axioms LongCycleBounds.TwoCycle130.lower_simple
+#print axioms LongCycleBounds.TwoCycle130.upper_simple
+#print axioms LongCycleBounds.TwoCycle130RootData.lowerMesh
+#print axioms LongCycleBounds.TwoCycle130RootData.upperMesh
+#print axioms LongCycleBounds.DescentNecklace.negativeMeshOK_sound
+#print axioms LongCycleBounds.DescentNecklace.QuotientMeshRoots.full_root_count

@@ -1,0 +1,7 @@
+direct TeX pass 1: exit 0
+direct TeX pass 2: exit 0
+extracted ZIP pass 1: exit 0
+extracted ZIP pass 2: exit 0
+Fresh direct and extracted-ZIP builds agree byte for byte
+bda047616380fc0fa7eca2fb5797cadf294c4173a4c4cc2c177aeed5d0765e55  main.pdf
+5f797e693553884a5a6ab3d85e2038cebbc735904808bb39c38cb6defa78862a  arxiv-source.zip

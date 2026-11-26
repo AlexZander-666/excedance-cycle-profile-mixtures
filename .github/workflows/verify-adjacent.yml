@@ -1,0 +1,37 @@
+name: Verify the adjacent 129 and 130 rows
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  exact-arithmetic:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - run: sha256sum --quiet -c SHA256SUMS
+      - run: python3 -B adjacent-129-130/certificates/verify_130.py
+      - run: python3 -B adjacent-129-130/formal/certificates/replay_roots.py
+  lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64
+        with:
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          use-github-cache: false
+          use-mathlib-cache: false
+      - name: Build and replay the original-object theorem
+        working-directory: adjacent-129-130/formal
+        env:
+          LEAN_NUM_THREADS: '1'
+        run: |
+          elan toolchain install "$(cat lean-toolchain)"
+          lean_bin=$(dirname "$(elan which lean)")
+          PATH="$lean_bin:$PATH" python3 -Bu verify_lean.py . TwoCycle130RootsAudit --serial

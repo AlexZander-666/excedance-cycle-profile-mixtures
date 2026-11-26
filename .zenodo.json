@@ -1,0 +1,27 @@
+{
+  "title": "Cycle selection and the real zeros of excedance polynomials",
+  "description": "Lean proofs and exact certificates for independent and shared cycle-selection rules and an adjacent-size obstruction. At sizes 129 and 130 one deterministic rule yields individually simple real-rooted rows whose roots fail weak interlacing.",
+  "version": "1.2.0",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Zuo, Bowen",
+      "affiliation": "East China University of Science and Technology"
+    }
+  ],
+  "keywords": [
+    "enumerative combinatorics",
+    "real-rooted polynomials",
+    "permutation statistics",
+    "interlacing",
+    "Lean 4"
+  ],
+  "license": "Apache-2.0",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/AlexZander-666/excedance-cycle-profile-mixtures",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

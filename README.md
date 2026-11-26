@@ -1,5 +1,9 @@
 # Cycle selection and the real zeros of excedance polynomials
 
+At sizes **129 and 130**, one fixed set of allowed cycle lengths produces two strict-excedance polynomials with only simple real roots whose roots fail to interlace. The set includes every length from 87 onward and the even lengths in 44–54 and 76–86. The four-page paper gives the rational sign obstruction and all contributing cycle types. [Theorem 3.1](adjacent-129-130/paper/main.pdf) · [Lean proof, certificates and reproduction](adjacent-129-130/)
+
+## Fixed-size cycle selection
+
 On 44 letters every cycle of length 2 through 43 has acceptance probability one half and a 44-cycle is always accepted. Drawing independently for each cycle gives 42 simple negative zeros and one simple zero at the origin. A shared draw with the same individual probabilities gives four nonreal zeros. Both conditional rows have simple real zeros. A second same-marginal example uses 34 letters.
 
 Version 1.1.0 contains the combined paper and a standalone proof project. Its Lean theorem checks the true permutation enumerators, the independent-choice rows and nonsplitting for the shared choices. Rational Sturm computations certify the exact nonreal counts. The fresh project build and kernel replay covered 106 local modules. [Paper](dependence/main.pdf) · [Reproduction](dependence/README.md) · [Joint Lean theorem](dependence/formal/LongCycleBounds/ProfileDependence.lean) · [Certificates](dependence/certificates/)

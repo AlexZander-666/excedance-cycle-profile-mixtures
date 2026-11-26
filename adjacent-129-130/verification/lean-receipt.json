@@ -1,0 +1,200 @@
+{
+  "audit_module": "TwoCycle130RootsAudit",
+  "audited_transitive_axioms": {
+    "LongCycleBounds.DescentNecklace.QuotientMeshRoots.full_root_count": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LongCycleBounds.DescentNecklace.negativeMeshOK_sound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LongCycleBounds.RootTests.common_zero_obstruction": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LongCycleBounds.TwoCycle130.at_most_two": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LongCycleBounds.TwoCycle130.individually_real_but_not_interlacing": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LongCycleBounds.TwoCycle130.lower_row": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LongCycleBounds.TwoCycle130.lower_simple": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LongCycleBounds.TwoCycle130.nonzero_weight_at_most_two": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LongCycleBounds.TwoCycle130.original_not_interlacing": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LongCycleBounds.TwoCycle130.unit": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LongCycleBounds.TwoCycle130.unit_tail": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LongCycleBounds.TwoCycle130.upper_row": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LongCycleBounds.TwoCycle130.upper_simple": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LongCycleBounds.TwoCycle130Arithmetic.evaluated_signs": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LongCycleBounds.TwoCycle130Arithmetic.lowerCoeffs_spec": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LongCycleBounds.TwoCycle130Arithmetic.upperCoeffs_spec": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LongCycleBounds.TwoCycle130RootData.lowerMesh": [
+      "propext"
+    ],
+    "LongCycleBounds.TwoCycle130RootData.upperMesh": [
+      "propext"
+    ]
+  },
+  "cold_log_sha256": "53b1f3776681a3b146da14b91d4fd87806c472d5c811cc4ca0e923f0c2c9a1c3",
+  "project_modules": [
+    "Cluster.EulerianInsertion",
+    "LongCycleBounds",
+    "LongCycleBounds.AdjacentRootStep",
+    "LongCycleBounds.AnchoredRows",
+    "LongCycleBounds.BandBinomial",
+    "LongCycleBounds.BandCycles",
+    "LongCycleBounds.BandEndpoint",
+    "LongCycleBounds.BandFormula",
+    "LongCycleBounds.BandMoments",
+    "LongCycleBounds.BandOuterMoments",
+    "LongCycleBounds.BandRows",
+    "LongCycleBounds.BandShape",
+    "LongCycleBounds.BandSturm",
+    "LongCycleBounds.BulkComplex",
+    "LongCycleBounds.CommonZeroWronskian",
+    "LongCycleBounds.CycleProfile",
+    "LongCycleBounds.CycleProfileHomotopy",
+    "LongCycleBounds.CycleProfileIndependentWeights",
+    "LongCycleBounds.CycleProfileNormalization",
+    "LongCycleBounds.CycleProfileReadout",
+    "LongCycleBounds.DerangementAnchor",
+    "LongCycleBounds.DescentFiberReconstruction",
+    "LongCycleBounds.DescentFiniteRoots",
+    "LongCycleBounds.DescentInventoryMass",
+    "LongCycleBounds.DescentItineraryInventory",
+    "LongCycleBounds.DescentLabelCount",
+    "LongCycleBounds.DescentNecklaceContent",
+    "LongCycleBounds.DescentNecklaceCount",
+    "LongCycleBounds.DescentNecklaceDP",
+    "LongCycleBounds.DescentNumeratorTransform",
+    "LongCycleBounds.DescentPrimitiveItinerary",
+    "LongCycleBounds.DescentRows",
+    "LongCycleBounds.DescentStandardize",
+    "LongCycleBounds.DescentTwoLetters",
+    "LongCycleBounds.EulerianBulk",
+    "LongCycleBounds.EulerianSeries",
+    "LongCycleBounds.EulerianSturm",
+    "LongCycleBounds.GeneralCycleQuotient",
+    "LongCycleBounds.GeneralCycleSupports",
+    "LongCycleBounds.InitialRows",
+    "LongCycleBounds.InsertionBoundary",
+    "LongCycleBounds.InterlacingWronskian",
+    "LongCycleBounds.LinearOuterBridge",
+    "LongCycleBounds.LinearRootCoordinates",
+    "LongCycleBounds.LinearRowInduction",
+    "LongCycleBounds.LinearTransfer",
+    "LongCycleBounds.MarkedExponentialBias",
+    "LongCycleBounds.MarkedInsertion",
+    "LongCycleBounds.MarkedLabelBias",
+    "LongCycleBounds.MarkedLogistic",
+    "LongCycleBounds.MarkedQuotientHomotopy",
+    "LongCycleBounds.MarkedTwoCycles",
+    "LongCycleBounds.MarkedTwoEGF",
+    "LongCycleBounds.Necklace",
+    "LongCycleBounds.OriginalRoots",
+    "LongCycleBounds.Outer",
+    "LongCycleBounds.OuterAlternation",
+    "LongCycleBounds.OuterDecay",
+    "LongCycleBounds.OuterLow",
+    "LongCycleBounds.OuterMode",
+    "LongCycleBounds.OuterMoments",
+    "LongCycleBounds.PartialFractions",
+    "LongCycleBounds.PoleBridge",
+    "LongCycleBounds.PoleTails",
+    "LongCycleBounds.RankedSupport",
+    "LongCycleBounds.Reciprocity",
+    "LongCycleBounds.RootBound",
+    "LongCycleBounds.RootHomotopy",
+    "LongCycleBounds.Sturm",
+    "LongCycleBounds.ThreeCycleLengths",
+    "LongCycleBounds.ThreeCycleQuotient",
+    "LongCycleBounds.ThreeCycleRows",
+    "LongCycleBounds.TripleCycleWeight",
+    "LongCycleBounds.TripleThresholdRow",
+    "LongCycleBounds.TwoCycle130Arithmetic",
+    "LongCycleBounds.TwoCycle130RootData",
+    "LongCycleBounds.TwoCycle130Rows",
+    "LongCycleBounds.TwoCycle130SeparateRoots",
+    "LongCycleBounds.TwoCycle130Verified",
+    "LongCycleBounds.UniversalInsertion",
+    "LongCycleBounds.UniversalRecurrence",
+    "LongCycleBounds.UniversalShortBranch",
+    "LongCycleFinite.Arithmetic",
+    "LongCycleFinite.Assembly",
+    "LongCycleFinite.Checks",
+    "LongCycleFinite.CoefficientRows",
+    "LongCycleFinite.Gamma",
+    "LongCycleFinite.Interlacing",
+    "LongCycleFinite.K3NaturalArithmetic",
+    "LongCycleFinite.LiftRoots",
+    "LongCycleFinite.Rounded",
+    "LongCycles.AnchoredCycles",
+    "LongCycles.CycleSizes",
+    "LongCycles.FirstSplit",
+    "LongCycles.FirstSplitRows",
+    "LongCycles.PermCycleBridge",
+    "LongCycles.SingleCycleWeight",
+    "LongCycles.Statement",
+    "LongCycles.SupportWords",
+    "LongCycles.TwoCycleWeight",
+    "LongCycles.WordWeight",
+    "Statement"
+  ],
+  "source_cold_verifier_exit": 0,
+  "source_manifest_check_exit": 0,
+  "source_zip_sha256": "2be31d7b93c6bca38bf54925c27f41095f5475ff72b436f42e88f61c4a58e153",
+  "successful_lake_build_batches": 51
+}

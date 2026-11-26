@@ -1,0 +1,2 @@
+P degree=127 distinct_negative_roots_at_least=127 center=True
+Q degree=128 distinct_negative_roots_at_least=128 center=False

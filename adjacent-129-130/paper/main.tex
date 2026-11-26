@@ -1,0 +1,192 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1.1cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd,cite}
+
+
+
+\usepackage{titlesec}
+\titleformat{\section}
+{\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em.}{}
+
+
+\usepackage[labelfont=bf]{caption}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{counterexample}{Counter Example}[section]
+\newtheorem{observation}{Observation}[section]
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\allowdisplaybreaks[4]
+
+\let\oldbibliography\thebibliography
+\renewcommand{\thebibliography}[1]{%
+  \oldbibliography{#1}%
+  \setlength{\itemsep}{-2pt}%
+}
+
+
+
+\baselineskip=1.20in
+
+
+
+\AddToHook{cmd/paragraph/before}{\raggedright}
+\pdftrailerid{}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[hidelinks,pdftitle={Cycle selection and the real zeros of excedance polynomials},pdfauthor={Bowen Zuo}]{hyperref}
+
+
+
+
+\newcommand{\exc}{\operatorname{exc}}
+\begin{document}
+
+\baselineskip=0.20in
+
+
+
+
+\noindent\makebox[\textwidth]{%
+\hglue-15pt
+\begin{minipage}{0.6cm}	
+%\vfill
+\vskip9pt
+\end{minipage} \vspace{-\parskip}
+\begin{minipage}[t]{6cm}
+\footnotesize{ {\bf Discrete Mathematics Letters} \\ \underline{www.dmlett.com}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{6.5cm}
+\normalsize {\it Submission manuscript}
+\end{minipage}}
+\vskip36pt
+
+
+\noindent{\large\bf Cycle selection and the real zeros of excedance polynomials}\\[2mm]
+\noindent Bowen Zuo\\
+\noindent{\footnotesize\it East China University of Science and Technology}\\
+\setcounter{page}{1}\thispagestyle{empty}
+\normalsize
+\begin{abstract}
+Two rules for accepting the cycles of a derangement can assign the same acceptance probability to every individual cycle and give excedance polynomials with different root behavior. On 44 letters, each cycle of length below 44 has acceptance probability one half, and the full cycle is always accepted. Independent choices give 42 simple negative roots and a simple zero at the origin. One shared choice gives four nonreal roots, although each of its two conditional enumerators has only simple real roots. A second example has unequal choice probabilities. A deterministic length restriction gives a nonreal row on 40 letters. A second deterministic restriction gives adjacent rows on 129 and 130 letters with only simple real roots that fail to interlace. Its contributing permutations have at most two cycles.
+\\[2mm]
+{\bf Keywords:} derangements; excedance polynomials; cycle weights; real zeros.\\[2mm]
+{\bf 2020 Mathematics Subject Classification:} 05A15, 26C10.
+\end{abstract}
+
+
+\section{Two ways to choose admissible cycles}
+Let $C(\pi)$ be the cycles of a derangement of $[n]=\{1,\ldots,n\}$ and let $\exc(\pi)=\#\{i:\pi(i)>i\}$. For cycle weights $w=(w_j)_{j\ge2}$ define
+\[
+ F_n(w;t)=\sum_{\pi\text{ a derangement of }[n]}t^{\exc(\pi)}
+                  \prod_{c\in C(\pi)} w_{|c|}.
+\]
+For a set $S$ of admissible cycle lengths, write $F_n(S)=F_n(\mathbf1_S;t)$. For distinct choices $A,B$ of such sets and $0<u<1$, consider
+\[
+ L_n=F_n((1-u)\mathbf1_A+u\mathbf1_B;t),\qquad
+ G_n=(1-u)F_n(A)+u F_n(B).
+\]
+In $L_n$ each cycle independently draws a set, with probability $u$ of drawing $B$. In $G_n$ all cycles use one common draw. Each enumerator weights a permutation by the probability that every cycle passes. For a single cycle of any prescribed length its marginal acceptance probability is the same in the two experiments.
+
+The cycle structure explains where the enumerators can differ. If a cycle has length outside $A\cup B$, the permutation never passes. Otherwise let $a$ and $b$ count the cycles whose lengths lie exclusively in $A$ and $B$, respectively. Its acceptance probabilities are
+\begin{equation}\label{class}
+ (1-u)^a u^b\quad\text{and}\quad
+ (1-u)\mathbf1_{\{b=0\}}+u\mathbf1_{\{a=0\}},
+\end{equation}
+respectively. In particular the common draw excludes every permutation having both kinds of exclusive cycles. A permutation with several exclusive cycles of just one kind is more likely to pass the common draw. Both rules give the same weight when at most one cycle is exclusive. Formula \eqref{class} follows by conditioning on the draw and by multiplication for independent choices.
+
+Write $T_n=\{j:j\ge n\}$. Use $A=A_n^-\cup T_n$ and $B=B_n^-\cup T_n$ with
+\begin{align*}
+ A_{34}^-&=\{3,4,7,10,13,14,16,17,20,23\},\\
+ B_{34}^-&=\{2,3,5,6,8,9,12,15,18,21,24,27\},\\
+ A_{44}^-&=\{2,4,6,9,11,13,16,18,20,23,25,27,30,32,34,36,37,39,41,43\},\\
+ B_{44}^-&=\{2,\ldots,43\}\setminus A_{44}^-.
+\end{align*}
+\begin{theorem}\label{main}
+Take $(n,u)=(34,2/3)$ or $(44,1/2)$. In both cases $L_n$, $F_n(A)$ and $F_n(B)$ each have a simple zero at zero and $n-2$ simple negative zeros. The polynomial $G_n$ has four nonreal zeros counted with multiplicity. In the size-44 example every length $2\le j<44$ has marginal probability $1/2$, and length 44 has probability one.
+\end{theorem}
+At size 44, if $D_n(q;t)=\sum_{\pi}q^{\#C(\pi)}t^{\exc(\pi)}$ sums over derangements, then $L_{44}=D_{44}(1/2;t)+t A_{43}(t)/2$, where $A_m$ is the ordinary Eulerian polynomial. The correction restores the full cycle from half to unit weight. Brenti studied cycle refinements of permutation enumerators \cite{brenti}. For each positive uniform cycle weight, Ma's Sturm theorem gives real-rootedness of the baseline $D_n(q;t)$ \cite[Theorem~3.5]{mad}. The size-44 independent-choice row also includes the displayed full-cycle correction. Here the comparison changes the dependence between the cycle choices while preserving their marginals.
+
+An example in the independent model alone is obtained on a different pair of sizes.
+\begin{theorem}\label{single}
+Put $S=B_{34}^-\cup T_{39}$. The row $F_{39}(S)$ has a simple zero at zero and 37 simple negative zeros. The next row $F_{40}(S)$ has four nonreal zeros counted with multiplicity.
+\end{theorem}
+Alexandersson's long-cycle question specifies a hard minimum $S=T_k$ and interlacing in consecutive sizes \cite{alex}. Theorem~\ref{main} compares cycle-selection rules at fixed $n$. Theorem~\ref{single} allows a nonconsecutive set below its unrestricted upper tail. Both constructions admit the full cycle. Brenti proved real-rootedness for each individual conjugacy class \cite[Thms.~3.1--3.2]{brenti}. An earlier example on 12 letters allows just lengths 3 and 4 \cite{earlier}. Its two classes have a nonreal sum, and each has a multiple zero at the origin. It does not include the full cycle.
+
+\section{Exact verification}
+On a prescribed set of $j\ge2$ labels, the enumerator of a single cycle is $tA_{j-1}(t)$. Start its cycle word with the largest label. Each internal rise after the largest label is an excedance, and the last step back to that label contributes one more. Reversal of the remaining word equates ascent and descent distributions. Thus choosing the cycle containing the least label gives
+\begin{equation}\label{rec}
+ F_0(w;t)=1,\qquad
+ F_m(w;t)=\sum_{j=2}^m \binom{m-1}{j-1}
+            w_j\,tA_{j-1}(t)\,F_{m-j}(w;t).
+\end{equation}
+All computations use $A_0=1$ and $A_{j+1}=(1+jt)A_j+t(1-t)A'_j$. Replacing $w_j$ by $z^j w_j$ multiplies $F_n$ by $z^n$, since the lengths of its cycles sum to $n$. Taking $z=3,2$ in the two independent rows of Theorem~\ref{main} gives integer inputs to \eqref{rec}.
+
+Each of these enumerators is divisible by $t$. Its quotient is reciprocal of degree $n-2$, since inversion takes $e$ strict excedances to $n-e$ in a derangement and preserves each cycle length. Only a full cycle can contribute an extreme term, so the unscaled quotient has leading and constant coefficients one.
+
+\begin{proof}[Verification of Theorem~\ref{main}]
+For each $n$ and each of the three proposed real-rooted rows, Table~\ref{nodes} specifies a list of descending positive magnitudes. At their negatives evaluate the quotient by $t$. Its signs are $+,-,+,\ldots$ by \eqref{rec}. There are $n/2$ nodes ending at $-1$, hence $(n-2)/2$ distinct roots below $-1$. Reciprocity supplies the same number above $-1$ and below zero. The degree gives simplicity and exhausts the roots.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}ccl@{}}
+\hline
+$n$ & & Magnitudes, in order \\ \hline
+34 & prefix & $2^{35},2^{25},2^{18},2^{13},2^{10},200,75,35,19,11$\\
+   & pair & $(6,4)$ for $A$, $(8,6)$ for $B$, $(7,5)$ for $L$\\
+   & suffix & $3,5/2,7/4,5/4,1$\\
+44 & prefix & $2^{45},2^{41},2^{24},2^{17},2^{13},2^{10},400,155,75,40,24,16,10,7,5,4,3$\\
+   & pair & $(5/2,17/8)$ for $A$, $(9/4,15/8)$ for $B$, $(5/2,2)$ for $L$\\
+   & suffix & $3/2,5/4,1$\\ \hline
+\end{tabular}
+\caption{Concatenate the prefix, the selected pair and the suffix. All nodes are rational.}\label{nodes}
+\end{table}
+
+To detect the failure in the common-draw model, let $\Delta_f=(f')^2-ff''$. At any real $x$ with $f(x)\ne0$, a real-rooted polynomial satisfies $\Delta_f(x)/f(x)^2=\sum_{r}(x-r)^{-2}\ge0$, with $r$ counted with multiplicity. The rational bounds in Table~\ref{gap} therefore exclude real-rootedness. The expression is unchanged by scaling $f$ by a nonzero constant. The exact Sturm counts in that table give the stated number of nonreal zeros.
+\end{proof}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}lcccc@{}}
+\hline
+$f$ & $x$ & $\Delta_f(x)/f(x)^2$ & $\deg(f/t)$ & real roots of $f/t$\\ \hline
+$G_{34}$ & $-2/15$ & $(-9814,-9813)$ & $32$ & $28$\\
+$G_{44}$ & $-1/2$  & $(-1650,-1649)$ & $42$ & $38$\\
+$F_{40}(S)$ & $-2/15$ & $(-1993,-1992)$ & $38$ & $34$\\ \hline
+\end{tabular}
+\caption{Open rational bounds and exact Sturm counts. All three quotients are squarefree.}\label{gap}
+\end{table}
+
+\begin{proof}[Verification of Theorem~\ref{single}]
+Apply \eqref{rec} to $w_j=\mathbf1_{j\in S}$. At size 39 the Sturm chain of the quotient by $t$ ends in a nonzero constant and counts 37 distinct real roots. Positive coefficients and a nonzero constant place them below zero. At size 40 the last line of Table~\ref{gap} gives 34 real roots for a squarefree degree-38 quotient.
+\end{proof}
+
+For clarity, every Sturm count above uses $h_0=f/t$, $h_1=h'_0$, $h_{i+1}=-\operatorname{rem}(h_{i-1},h_i)$ over $\mathbb Q$. At $+\infty$ read the signs of the leading coefficients, and at $-\infty$ multiply each by $(-1)^{\deg h_i}$. The difference between the two sign-variation counts is the number of distinct real roots. Equations \eqref{rec} and this rule suffice to reconstruct Tables~\ref{nodes}--\ref{gap}. The supplementary verifier \texttt{independent\_marginals.py} checks the displayed intervals and all listed signs with integer and rational arithmetic.
+
+\input{two-cycle}
+
+\paragraph{Verification and earlier versions.}
+The Lean~4 theorem \texttt{joint\_comparison} begins with the weighted sums over permutations. It verifies the simple real-root counts, the common-draw failures of real-rootedness, and the size-39 to size-40 transition. The exact counts of four nonreal roots are certified by the separate rational Sturm computation. The Lean theorem \texttt{individually\_real\_but\_not\_interlacing} proves Theorem~\ref{two-cycle} for the genuine rows. Its exact rational obstruction and individual splitting certificates were checked from frozen source. Two public preliminary reports \cite{z40,zmix} give the deterministic and shared-choice counterexamples. This article consolidates those results and proves the matched-marginal comparison, its independent-choice certificates, the formal real-root count for the lower size-39 row, and the adjacent real-rooted obstruction at sizes 129 and 130. ChatGPT assisted in discovery, formalization, checking and drafting. The author takes responsibility for the paper.
+
+\begin{thebibliography}{9}
+\bibitem{alex} P. Alexandersson, \emph{Real-rooted polynomials: open problems}, section on permutations with long cycles, \href{https://www.symmetricfunctions.com/realRootedOpenProblems.htm\#permutations-with-long-cycles}{SymCat}.
+\bibitem{brenti} F. Brenti, Permutation enumeration, symmetric functions, and unimodality, \emph{Pacific J. Math.} \textbf{157} (1993), 1--28. \href{https://doi.org/10.2140/pjm.1993.157.1}{doi:10.2140/pjm.1993.157.1}.
+\bibitem{mad} S.-M. Ma, Counting permutations by numbers of excedances, fixed points and cycles, \emph{Bull. Aust. Math. Soc.} \textbf{85} (2012), 415--421. \href{https://doi.org/10.1017/S0004972711002760}{doi:10.1017/S0004972711002760}.
+\bibitem{earlier} \emph{Alexandersson long-cycle research}, sections on P\'olya-frequency weights and cross-threshold interlacing, \href{https://github.com/1337isnot1337/solved-conjectures/blob/0c07434ef991b853528ca55926b3b83820b7f58d/docs/alexandersson-long-cycle-research.md}{fixed source revision}.
+\bibitem{pc-two} ProgramComputer, \emph{Consecutive interlacing through the two-cycle range}, section of the research manuscript on minimum cycle length, November 2026. \href{https://github.com/ProgramComputer/open-math-research/blob/4da48b72ed8f92f96c2faf60e2d63d253b3b507a/topics/long-cycle-excedances/two-cycle-insertion.tex}{Fixed source revision}.
+\bibitem{z40} B. Zuo, \emph{A nonreal excedance polynomial with an unrestricted tail of cycle lengths}, version 1.0.0 (2026), \href{https://doi.org/10.5281/zenodo.24556865}{doi:10.5281/zenodo.24556865}.
+\bibitem{zmix} B. Zuo, \emph{Nonreal averages of real-rooted cycle-restricted excedance polynomials}, version 1.0.0 (2026), \href{https://doi.org/10.5281/zenodo.24556513}{doi:10.5281/zenodo.24556513}.
+\end{thebibliography}
+\end{document}
