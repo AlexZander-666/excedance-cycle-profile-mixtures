@@ -1,0 +1,6 @@
+34 32 simple negative local roots; four nonreal global roots
+44 42 simple negative local roots; four nonreal global roots
+39 to 40: 37 simple negative quotient roots in the lower row; 34 real quotient roots in the upper row
+34 normalized Laguerre difference in (-9814, -9813)
+44 normalized Laguerre difference in (-1650, -1649)
+40 normalized Laguerre difference in (-1993, -1992)

@@ -1,4 +1,14 @@
-# Nonreal averages of real-rooted cycle-restricted excedance polynomials
+# Cycle selection and the real zeros of excedance polynomials
+
+On 44 letters every cycle of length 2 through 43 has acceptance probability one half and a 44-cycle is always accepted. Drawing independently for each cycle gives 42 simple negative zeros and one simple zero at the origin. A shared draw with the same individual probabilities gives four nonreal zeros. Both conditional rows have simple real zeros. A second same-marginal example uses 34 letters.
+
+Version 1.1.0 contains the combined paper and a standalone proof project. Its Lean theorem checks the true permutation enumerators, the independent-choice rows and nonsplitting for the shared choices. Rational Sturm computations certify the exact nonreal counts. The fresh project build and kernel replay covered 106 local modules. [Paper](dependence/main.pdf) · [Reproduction](dependence/README.md) · [Joint Lean theorem](dependence/formal/LongCycleBounds/ProfileDependence.lean) · [Certificates](dependence/certificates/)
+
+Ma, Theorem 3.5, establishes real-rootedness of the baseline derangement row with a single positive cycle weight. The independent row in the 44-letter example adds half the full-cycle polynomial to that baseline. The paper's certificates cover this corrected row. [Ma’s paper](https://doi.org/10.1017/S0004972711002760)
+
+The [earlier mixture paper](https://doi.org/10.5281/zenodo.24556513) and [earlier deterministic-profile paper](https://doi.org/10.5281/zenodo.24556865) document the constituent nonsplitting examples. The joint paper adds the comparison at identical one-cycle marginals and the positive certificates for the independent rows and the 39-letter predecessor. Bowen Zuo, East China University of Science and Technology. ChatGPT assisted with discovery, checking, formalization and drafting.
+
+## Original mixture edition
 
 On 44 letters two polynomials, each with 42 simple negative zeros and a simple zero at the origin, have an arithmetic mean with nonreal zeros. Both count permutations by strict excedances and allow the full 44-cycle. A second example on 34 letters has mixing weights one third and two thirds. [Paper](paper/main.pdf) · [Joint Lean theorem](formal/LongCycleBounds/MixedProfilesVerified.lean)
 

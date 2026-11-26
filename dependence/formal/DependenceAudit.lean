@@ -1,0 +1,13 @@
+import LongCycleBounds.ProfileDependence
+import MixedProfilesAudit
+
+#print axioms LongCycleBounds.CycleProfile.row_rescale
+#print axioms LongCycleBounds.CycleProfile.independent_cycle_assignments
+#print axioms LongCycleBounds.CycleProfile.uniform44
+#print axioms LongCycleBounds.CycleProfile.Local34.independent_simple
+#print axioms LongCycleBounds.CycleProfile.Local44.independent_simple
+#print axioms LongCycleBounds.CycleProfile.Lower39.simple
+#print axioms LongCycleBounds.CycleProfile.Counterexample.not_weak_interlacing
+#print axioms LongCycleBounds.CycleProfile.Counterexample.negative_gap
+#print axioms LongCycleBounds.CycleProfile.two_convex_failures
+#print axioms LongCycleBounds.CycleProfile.joint_comparison
