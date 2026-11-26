@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\pdftrailerid{}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,hyperref}
+\newtheorem{theorem}{Theorem}
+\title{Nonreal averages of real-rooted cycle-restricted excedance polynomials}
+\author{Bowen Zuo\\ {\small East China University of Science and Technology}}
+\hypersetup{pdfauthor={Bowen Zuo},pdftitle={Nonreal averages of real-rooted cycle-restricted excedance polynomials}}
+\date{26 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We construct two pairs of individually real-rooted strict-excedance polynomials with nonreal convex combinations. At size 44 the arithmetic mean fails to be real-rooted, and at size 34 the weights are one third and two thirds. Both endpoint models include the full cycle and forbid fixed points. Every endpoint zero is simple. Rational sign tests certify the endpoint roots; a negative Laguerre difference certifies the failure for each mixture.
+\end{abstract}
+
+For a set $S$ of positive integers define
+\[
+ F_{n,S}(t)=\sum_{\substack{\pi\in\mathfrak S_n\\\text{all cycle lengths in }S}}
+ t^{\#\{i:\pi(i)>i\}}.
+\]
+Alexandersson asks about interlacing for consecutive sizes with a fixed hard minimum cycle length \cite{alex}. Here we consider a different question: does taking a convex combination of whole rows at one size preserve real-rootedness when each endpoint is real-rooted? Brenti's class product formula gives real-rootedness within each conjugacy class \cite[Theorems 3.1--3.2]{brenti}. An earlier size-12 example allows just 3- and 4-cycles, producing the sum of the class polynomials for types $3^4$ and $4^3$ \cite{earlier}. Their average therefore already has a nonreal root. Neither model includes the full cycle, and both rows have a multiple zero at the origin.
+
+Let $T_n=\{j\ge n\}$. In each of the following pairs the allowed lengths consist of $T_n$ together with the displayed short lengths:
+\[
+\begin{aligned}
+ A_{34}^- &= \{3,4,7,10,13,14,16,17,20,23\},\\
+ B_{34}^- &= \{2,3,5,6,8,9,12,15,18,21,24,27\},\\
+ A_{44}^- &= \{2,4,6,9,11,13,16,18,20,23,25,27,30,32,34,36,37,39,41,43\},\\
+ B_{44}^- &= \{2,\ldots,43\}\setminus A_{44}^-.
+\end{aligned}
+\]
+Write $a_n=F_{n,A_n^-\cup T_n}$ and $b_n=F_{n,B_n^-\cup T_n}$.
+
+\begin{theorem}
+For $n=34,44$, both $a_n$ and $b_n$ have a simple zero at zero and $n-2$ simple negative zeros. Both $(a_{34}+2b_{34})/3$ and $(a_{44}+b_{44})/2$ have a nonreal zero.
+\end{theorem}
+\begin{proof}
+A cycle on a fixed $j$-set has excedance polynomial $tA_{j-1}(t)$, with $A_m$ the ordinary Eulerian descent polynomial. Start its cycle word with its largest label. The remaining letters contribute their ascents and there is one final rise to the largest label. Ascents and descents have the same distribution. Each full $n$-cycle class thus contributes one to both extreme coefficients, at degrees $1,n-1$. Every other class has at least two cycles and contributes only between degrees $2$ and $n-2$. Inversion takes $e$ excedances to $n-e$ for a fixed-point-free permutation and preserves the cycle lengths. Consequently both endpoint quotients by $t$ are monic reciprocal polynomials of degree $n-2$, with constant coefficient one.
+
+For each quotient, take the following negative nodes ending at $-1$. They are specified by positive magnitudes in decreasing order; the actual nodes are their negatives. The pair $(u,v)$ changes between the two endpoint rows:
+\[
+\begin{array}{c|l|c|c}
+n&\text{ordered magnitudes}&(u,v)\text{ for }a_n &(u,v)\text{ for }b_n\\ \hline
+34&\begin{gathered}2^{35},2^{25},2^{18},2^{13},2^{10},200,75,35,19,11,\\
+u,v,3,5/2,7/4,5/4,1\end{gathered}&(6,4)&(8,6)\\[3pt]
+44&\begin{gathered}2^{45},2^{41},2^{24},2^{17},2^{13},2^{10},400,155,75,40,24,\\
+16,10,7,5,4,3,u,v,3/2,5/4,1\end{gathered}&(5/2,17/8)&(9/4,15/8)
+\end{array}
+\]
+The signs alternate, starting positive, as verified below. This gives $(n-2)/2$ distinct roots below $-1$ and, by reciprocity, the same number in $(-1,0)$, exhausting the degree.
+
+For $f=a_n+m b_n$ use $(n,m,x)=(34,2,-2/15)$ or $(44,1,-1/2)$. The following exact calculation checks the endpoint signs and $(f'^2-ff'')(x)<0$. It constructs the rows by choosing the companions of the least label in its cycle.
+{\small
+\begin{verbatim}
+from fractions import Fraction as R
+from math import comb
+def cycle(j):
+    return [0]+[sum((-1)**b*comb(j,b)*(i+1-b)**(j-1)
+                     for b in range(i+1)) for i in range(j-1)]
+def row(n,S):
+    f=[[1]]
+    for u in range(1,n+1):
+        p=[0]*u
+        for j in S:
+            if j<=u:
+                for i,c in enumerate(cycle(j)):
+                    for h,d in enumerate(f[u-j]):
+                        p[i+h]+=comb(u-1,j-1)*c*d
+        f.append(p)
+    return f[n]
+def value(p,x): return sum(c*x**i for i,c in enumerate(p))
+def der(p): return [i*c for i,c in enumerate(p)][1:]
+def check(n,S,T,m,x,prefix,pairs,suffix):
+    a,b=row(n,S|{n}),row(n,T|{n})
+    for p,pair in zip((a,b),pairs):
+        q=p[1:]
+        assert p[0]==0 and q[0]==q[-1]==1 and q==q[::-1]
+        nodes=prefix+list(pair)+suffix
+        assert len(nodes)==n//2 and nodes[-1]==1
+        assert all(v>w for v,w in zip(nodes,nodes[1:]))
+        assert all((-1)**i*value(q,-v)>0 for i,v in enumerate(nodes))
+    f=[v+m*w for v,w in zip(a,b)]
+    gap=value(der(f),x)**2-value(f,x)*value(der(der(f)),x)
+    assert gap<0
+    return a,b,gap
+A={3,4,7,10,13,14,16,17,20,23}
+B={2,3,5,6,8,9,12,15,18,21,24,27}
+case34=check(34,A,B,2,R(-2,15),
+  [2**35,2**25,2**18,2**13,2**10,200,75,35,19,11],
+  [(6,4),(8,6)], [3,R(5,2),R(7,4),R(5,4),1])
+A={2,4,6,9,11,13,16,18,20,23,25,27,30,32,34,36,37,39,41,43}
+case44=check(44,A,set(range(2,44))-A,1,R(-1,2),
+  [2**45,2**41,2**24,2**17,2**13,2**10,400,155,75,40,24,16,
+   10,7,5,4,3], [(R(5,2),R(17,8)),(R(9,4),R(15,8))],
+  [R(3,2),R(5,4),1])
+\end{verbatim}
+}
+Any nonzero polynomial with only real roots satisfies $f'^2-ff''\ge0$ on the real axis: away from its zeros the difference divided by $f^2$ equals $\sum_r (x-r)^{-2}$ with multiplicity. Continuity handles zeros. The two negative differences exclude real-rootedness, also after the positive normalizations.
+\end{proof}
+
+Independent rational Sturm calculations give 28 and 38 real roots for the respective mixed quotients of degrees 32 and 42, leaving four nonreal roots in each. These counts have Python certificates. The joint Lean 4 theorem starts from the original weighted permutation sums and verifies endpoint simplicity and root counts and non-splitting of both specified convex combinations. ChatGPT assisted with discovery, formalization, verification and drafting. The author takes responsibility for the manuscript.
+
+\begin{thebibliography}{3}
+\bibitem{alex} P. Alexandersson, \emph{Real-rooted polynomials: open problems}, \href{https://www.symmetricfunctions.com/realRootedOpenProblems.htm\#permutations-with-long-cycles}{SymCat}.
+\bibitem{brenti} F. Brenti, Permutation enumeration, symmetric functions, and unimodality, \emph{Pacific J. Math.} \textbf{157} (1993), 1--28. \href{https://doi.org/10.2140/pjm.1993.157.1}{doi:10.2140/pjm.1993.157.1}.
+\bibitem{earlier} \emph{Alexandersson long-cycle research}, section on P\'olya-frequency length weights, \href{https://github.com/1337isnot1337/solved-conjectures/blob/0c07434ef991b853528ca55926b3b83820b7f58d/docs/alexandersson-long-cycle-research.md}{archived revision}.
+\end{thebibliography}
+\end{document}

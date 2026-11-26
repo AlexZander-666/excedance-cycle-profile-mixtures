@@ -1,0 +1,12 @@
+LongCycleBounds.CycleProfile.Mixed34.profiles_admissible: propext, Classical.choice, Quot.sound
+LongCycleBounds.CycleProfile.Mixed34.endpoints: propext, Classical.choice, Quot.sound
+LongCycleBounds.CycleProfile.Mixed34.mixture_gap: propext, Classical.choice, Quot.sound
+LongCycleBounds.CycleProfile.Mixed34.mixture_not_splits: propext, Classical.choice, Quot.sound
+LongCycleBounds.CycleProfile.Mixed34.convex_not_splits: propext, Classical.choice, Quot.sound
+LongCycleBounds.CycleProfile.Mixed44.profiles_admissible: propext, Classical.choice, Quot.sound
+LongCycleBounds.CycleProfile.Mixed44.endpoints: propext, Classical.choice, Quot.sound
+LongCycleBounds.CycleProfile.Mixed44.mixture_gap: propext, Classical.choice, Quot.sound
+LongCycleBounds.CycleProfile.Mixed44.mixture_not_splits: propext, Classical.choice, Quot.sound
+LongCycleBounds.CycleProfile.Mixed44.convex_not_splits: propext, Classical.choice, Quot.sound
+LongCycleBounds.CycleProfile.Mixed44.complementary: propext, Quot.sound
+LongCycleBounds.CycleProfile.two_convex_failures: propext, Classical.choice, Quot.sound

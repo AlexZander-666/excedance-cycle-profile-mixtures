@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Cite the paper and this version when using its exact examples."
+type: software
+title: "Nonreal averages of real-rooted cycle-restricted excedance polynomials"
+authors:
+  - family-names: "Zuo"
+    given-names: "Bowen"
+    affiliation: "East China University of Science and Technology"
+version: "1.0.0"
+date-released: "2026-11-26"
