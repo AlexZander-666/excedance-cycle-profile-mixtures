@@ -21,6 +21,7 @@ jobs:
           persist-credentials: false
       - uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64
         with:
+          lake-package-directory: adjacent-129-130/formal
           auto-config: false
           build: false
           test: false
