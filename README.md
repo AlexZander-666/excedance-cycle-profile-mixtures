@@ -46,4 +46,8 @@ python3 formal/verify_bounded.py formal MixedProfilesAudit ./fresh-mixed-profile
 
 The work directory must be new. This driver verifies the dependency revisions, starts with no project proof objects, checks every module in the original import closure, and checks the 12 axiom reports. The same closure and theorem names were used in the supplied bounded-parallel receipt.
 
-Bowen Zuo, East China University of Science and Technology, is the sole author and takes responsibility for the paper. Version 1.0.0 candidate, 26 November 2026. ChatGPT assisted with discovery, formalization, verification and drafting.
+Bowen Zuo, East China University of Science and Technology, is the sole author of the tagged releases and takes responsibility for them. Version 1.0.0 candidate, 26 November 2026. ChatGPT assisted with discovery, formalization, verification and drafting.
+
+## Authorship
+
+The tagged releases v1.0.0, v1.1.0 and v1.2.0 list Bowen Zuo as sole author. They remain unchanged and may be cited as they are. The manuscript prepared for journal submission is joint work of Bowen Zuo and Xiaojuan Luo (corresponding author), both of East China University of Science and Technology.
